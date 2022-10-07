@@ -189,13 +189,13 @@ static void can_setup(void)
     AFIO_MAPR |= AFIO_MAPR_CAN1_REMAP_PORTB;
 
     /* Configure CAN pin: RX (input pull-up) */
-    gpio_set_mode(GPIO_BANK_CAN1_PB_RX, GPIO_MODE_INPUT,
-        GPIO_CNF_INPUT_PULL_UPDOWN, GPIO_CAN1_PB_RX);
-    gpio_set(GPIO_BANK_CAN1_PB_RX, GPIO_CAN1_PB_RX);
+    gpio_set_mode(GPIO_BANK_CAN1_RX, GPIO_MODE_INPUT,
+        GPIO_CNF_INPUT_PULL_UPDOWN, GPIO_CAN1_RX);
+    gpio_set(GPIO_BANK_CAN1_RX, GPIO_CAN1_RX);
 
     /* Configure CAN pin: TX */
-    gpio_set_mode(GPIO_BANK_CAN1_PB_TX, GPIO_MODE_OUTPUT_50_MHZ,
-        GPIO_CNF_OUTPUT_ALTFN_PUSHPULL, GPIO_CAN1_PB_TX);
+    gpio_set_mode(GPIO_BANK_CAN1_TX, GPIO_MODE_OUTPUT_50_MHZ,
+        GPIO_CNF_OUTPUT_ALTFN_PUSHPULL, GPIO_CAN1_TX);
 
     /* NVIC setup */
     nvic_enable_irq(NVIC_USB_LP_CAN_RX0_IRQ);
